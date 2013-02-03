@@ -1,5 +1,5 @@
 def make_list():
-    unicode=open("unicode","r")
+    unicode=open("list","r")
     list=[]
     char_shusha=""
     for line in unicode:
