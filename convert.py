@@ -15,6 +15,10 @@ def make_list():
 def remove_ascii(str):
 	str=str.replace(',','')
 	str=str.replace('.','')
+	str = str.replace("'","'")
+	for i in range(0,10):
+		str = str.replace(str(i),'')
+	
 
 def post_process(str):
     #replace o- with O
