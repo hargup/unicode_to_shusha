@@ -1,22 +1,34 @@
 def is_ascii(c):
     try:
-        c.encode().decode('ascii')
+        c.encode().decode("ascii")
         return True
     except:
         return False
 
-def post_process(str):
+def halant_correction(s):
+	output = ""
+	x = s.find("\\")
+	while x > 0:
+		print("X is :%d",x)
+		if s[x-1] == "a":
+			output = output + s[:x-1]
+		s = s[x+1:]
+		x = s.find("\\")
+	return output
+
+def post_process(s):
     #put i before the preceding letter
-    output=''
-    x=str.find('i')
-    while x!=-1:
-        if str[x-1]=='a':
-           output=output+str[:x-2]+str[x]+str[x-2]+str[x-1]
+    output = ""
+    x = s.find("i")
+    while x != -1:
+        if s[x-1] == "a":
+           output = output+s[:x-2]+s[x]+s[x-2]+s[x-1]
         else:
-            output=output+str[:x-1]+str[x]+str[x-1]
-        str=str[x+1:]
-        x=str.find('i')
-    output=output+str
+            output = output+s[:x-1]+s[x]+s[x-1]
+        s = s[x+1:]
+        x = s.find("i")
+    output = output+s
+    output = halant_correction(output)
     return output
 
 def main():
@@ -84,13 +96,13 @@ def main():
    "्":"\\"
    }
     infile = open("hindi", "r")
-    outfile = open('shusha_out', 'w')
-    output = ''
+    outfile = open("shusha_out", "w")
+    output = ""
     uni_in = infile.read()
     for uni_char in uni_in:
-        if uni_char == '\n':
-            output = output + '\n'
-        if not is_ascii(uni_char) or uni_char == ' ':
+        if uni_char == "\n":
+            output = output + "\n"
+        if not is_ascii(uni_char) or uni_char == " ":
             try:
                 output = output + uni_shu[uni_char]
             except:

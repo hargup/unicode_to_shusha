@@ -33,3 +33,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+#usergenerated input and ouput file
+hindi
+shusha_out
