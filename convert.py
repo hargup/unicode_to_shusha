@@ -33,7 +33,7 @@ def post_process(s):
 
 def main():
     uni_shu= {" ":" ",
-   "आ":"a",
+   "आ":"Aa",
    "अ":"A",
    "आ":"Aa",
    "इ":"[",
