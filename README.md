@@ -5,8 +5,8 @@ Converts hindi text in shusha to ascii shusha font
 
 Requirements
 -------------
-####1.Python 3 or above
-####2.MS Word or Libre Office with Shusha Font installed.
+1. Python 3 or above
+2. MS Word or Libre Office with Shusha Font installed.
 
 
 Usage
